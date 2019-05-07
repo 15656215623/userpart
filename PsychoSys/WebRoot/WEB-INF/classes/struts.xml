@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.action.extension" value="do,action,kk"></constant>
+	<package name="user" extends="struts-default">
+		<default-interceptor-ref name="defaultStack"></default-interceptor-ref>
+	<!--用户注册登录  -->
+	<action  name="regedit"  method="regedit_user"  class="userRegedit">
+	<result name="success">/user.jsp</result>
+	</action>
+	<action  name="login"  method="login_user"  class="userRegedit">
+	</action>
+	<!--短信校验码  -->
+	<action  name="sendmess"  method="sendSms"  class="getMessage">
+	</action>
+	<action  name="smess"  method="sendSms"  class="sendMessage">
+	</action>
+	<!-- 重置密码 -->
+	<action  name="forget"  method="forget"  class="userRegedit">
+	<result name="success">/user.jsp</result>
+	</action>
+	</package>
+</struts>
